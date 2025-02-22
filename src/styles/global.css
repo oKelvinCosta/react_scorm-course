@@ -78,6 +78,57 @@
 
 /* END TAILWIND AND SHADCN */
 
+/* Typography */
+
+:root {
+  --title-font-family: "Roboto", "Helvetica Neue", sans-serif;
+  --text-font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/*
+Default guide
+
+display text-7xl
+h1 text-5xl
+h2 text-4xl
+h3 text-3xl
+h4 text-2xl
+h5 text-xl
+h6 text-lg
+p / default text-lg
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font-family);
+  @apply font-semibold mb-[24px];
+}
+h1 {
+  @apply text-5xl;
+}
+h2 {
+  @apply text-4xl;
+}
+h3 {
+  @apply text-3xl;
+}
+h4 {
+  @apply text-2xl;
+}
+h5 {
+  @apply text-xl;
+}
+h6 {
+  @apply text-lg;
+}
 p {
   margin: 0.5rem auto;
+  font-family: var(--text-font-family);
+}
+
+.container {
+  @apply mx-auto px-6;
 }
