@@ -178,22 +178,86 @@ export default function Home() {
           <h2>Carousel</h2>
           <Carousel className="w-full ">
             <CarouselContent>
-              {Array.from({ length: 5 }).map((_, index) => (
-                <CarouselItem key={index}>
-                  <div>
-                    <Card>
-                      <CardContent className="flex items-center justify-center p-6">
-                        <div className="grid grid-cols-2 gap-2">
-                          <img src="./src/assets/imgs/kelvin-costa-boards-temple-1.jpg" />
-                          <span className="text-4xl font-semibold">
-                            {index + 1}
-                          </span>
+              <CarouselItem>
+                <div>
+                  <Card>
+                    <CardContent className="flex items-center justify-center p-6">
+                      <div className="grid grid-cols-2 gap-2">
+                        <img src="./src/assets/imgs/kelvin-costa-boards-temple-1.jpg" />
+                        <div>
+                          <span className="text-4xl font-semibold">1</span>
+                          <p>
+                            Mussum Ipsum, cacilds vidis litro abertis.
+                            Casamentiss faiz malandris se pirulitá. A ordem dos
+                            tratores não altera o pão duris. Suco de cevadiss
+                            deixa as pessoas mais interessantis. Viva Forevis
+                            aptent taciti sociosqu ad litora torquent.
+                          </p>
+                          <p>
+                            Suco de cevadiss deixa as pessoas mais
+                            interessantis. Viva Forevis aptent taciti sociosqu
+                            ad litora torquent.
+                          </p>
                         </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem>
+                <div>
+                  <Card>
+                    <CardContent className="flex items-center justify-center p-6">
+                      <div className="grid grid-cols-2 gap-2">
+                        <img src="./src/assets/imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
+                        <div>
+                          <span className="text-4xl font-semibold">2</span>
+                          <p>
+                            Mussum Ipsum, cacilds vidis litro abertis.
+                            Casamentiss faiz malandris se pirulitá. A ordem dos
+                            tratores não altera o pão duris. Suco de cevadiss
+                            deixa as pessoas mais interessantis. Viva Forevis
+                            aptent taciti sociosqu ad litora torquent.
+                          </p>
+                          <p>
+                            Suco de cevadiss deixa as pessoas mais
+                            interessantis. Viva Forevis aptent taciti sociosqu
+                            ad litora torquent.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+
+              <CarouselItem>
+                <div>
+                  <Card>
+                    <CardContent className="flex items-center justify-center p-6">
+                      <div className="grid grid-cols-2 gap-2">
+                        <img src="./src/assets/imgs/Task 01 - Kelvin Cota.jpg" />
+                        <div>
+                          <span className="text-4xl font-semibold">3</span>
+                          <p>
+                            Mussum Ipsum, cacilds vidis litro abertis.
+                            Casamentiss faiz malandris se pirulitá. A ordem dos
+                            tratores não altera o pão duris. Suco de cevadiss
+                            deixa as pessoas mais interessantis. Viva Forevis
+                            aptent taciti sociosqu ad litora torquent.
+                          </p>
+                          <p>
+                            Suco de cevadiss deixa as pessoas mais
+                            interessantis. Viva Forevis aptent taciti sociosqu
+                            ad litora torquent.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
