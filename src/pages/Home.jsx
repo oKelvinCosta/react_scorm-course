@@ -183,7 +183,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="./src/assets/imgs/kelvin-costa-boards-temple-1.jpg" />
+                        <img src="/public/imgs/kelvin-costa-boards-temple-1.jpg" />
                         <div>
                           <span className="text-4xl font-semibold">1</span>
                           <p>
@@ -210,7 +210,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="./src/assets/imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
+                        <img src="/public/imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
                         <div>
                           <span className="text-4xl font-semibold">2</span>
                           <p>
@@ -237,7 +237,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="./src/assets/imgs/Task 01 - Kelvin Cota.jpg" />
+                        <img src="/public/imgs/Task.jpg" />
                         <div>
                           <span className="text-4xl font-semibold">3</span>
                           <p>
