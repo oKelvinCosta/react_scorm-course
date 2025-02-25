@@ -31,13 +31,18 @@ import {
 // Assets
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
+import * as SCOApp from "@/assets/scorm/SCOApp";
 
 export default function Home() {
   const [count, setCount] = useState(0);
 
+  const handleConclude = () => {
+    SCOApp.finishTopic();
+  };
+
   return (
     <>
-      <div className="py-[80px]">
+      <div id="intro" className="py-[80px]">
         <div className="container text-center">
           <div className="flex justify-center">
             <a href="https://vite.dev" target="_blank">
@@ -48,11 +53,8 @@ export default function Home() {
             </a>
           </div>
           <h1>Vite + React</h1>
-          <div className="card">
-            <Button onClick={() => setCount((count) => count + 1)}>
-              {" "}
-              count is {count}
-            </Button>
+          <div>
+            <Button onClick={() => handleConclude()}>Conclude</Button>
           </div>
 
           <div className="read-the-docs ">
@@ -72,7 +74,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[80px]">
+      <div id="typography" className="py-[80px]">
         <div className="container  text-left">
           <h2>Typography</h2>
 
@@ -98,7 +100,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[80px]">
+      <div id="accordion" className="py-[80px]">
         <div className="container">
           <h2>Accordion</h2>
 
@@ -127,7 +129,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[80px]">
+      <div id="cards" className="py-[80px]">
         <div className="container  text-left">
           <h2>Cards</h2>
           <div className="grid grid-cols-3 gap-4">
@@ -173,7 +175,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-[80px]">
+      <div id="carousel" className="py-[80px]">
         <div className="container  text-left">
           <h2>Carousel</h2>
           <Carousel className="w-full ">
@@ -183,7 +185,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="/public/imgs/kelvin-costa-boards-temple-1.jpg" />
+                        <img src="./imgs/kelvin-costa-boards-temple-1.jpg" />
                         <div>
                           <span className="text-4xl font-semibold">1</span>
                           <p>
@@ -210,7 +212,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="/public/imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
+                        <img src="./imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
                         <div>
                           <span className="text-4xl font-semibold">2</span>
                           <p>
@@ -237,7 +239,7 @@ export default function Home() {
                   <Card>
                     <CardContent className="flex items-center justify-center p-6">
                       <div className="grid grid-cols-2 gap-2">
-                        <img src="/public/imgs/Task.jpg" />
+                        <img src="./imgs/Task.jpg" />
                         <div>
                           <span className="text-4xl font-semibold">3</span>
                           <p>

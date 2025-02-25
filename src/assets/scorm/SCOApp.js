@@ -12,8 +12,8 @@ import * as APIWrapper from "./APIWrapper.js";
 import * as SCOFunctions from "./SCOFunctions.js";
 
 // Variáveis de controle
-const DEV = true; // Para DESENVOLVIMENTO apenas, para não ficar dando alert caso não encontre a API. Se for true, não vai chamar a API
-const DEBUG = false; // Para mostrar mensagens de debug no console que eu personalizei e coloquei em lugares estratégicos desse arquivo
+const DEV = false; // Para DESENVOLVIMENTO apenas, para não ficar dando alert caso não encontre a API. Se for true, não vai chamar a API
+const DEBUG = true; // Para mostrar mensagens de debug no console que eu personalizei e coloquei em lugares estratégicos desse arquivo
 
 // Pega API do SCORM
 export var scormAPI = !DEV ? APIWrapper.getAPIHandle() : null;

@@ -1,11 +1,11 @@
 import { src, dest, series } from "gulp";
-import zip from "gulp-zip";
+import zipGulp from "gulp-zip";
 import path from "path";
 
 import { deleteAsync } from "del";
 
 // Função para deletar tudo dentro da pasta "dist"
-export function cleanDist() {
+export function clean() {
   return deleteAsync(["dist/**"]);
 }
 
@@ -19,18 +19,18 @@ function getCurrentDate() {
 }
 
 // Tarefa para criar o ZIP da pasta dist
-export function zipScorm() {
+export function zip() {
   const dirname = path.basename(path.resolve());
   // Nome do arquivo ZIP gerado
-  const zipFileName = `${dirname}_SCORM-PKG_${getCurrentDate()}.zip`;
-  return src("dist/**/*") // Pega todos os arquivos dentro de dist
-    .pipe(zip(zipFileName)) // Cria o ZIP com o nome definido
+  const zipFileName = `${dirname}_${getCurrentDate()}_SCORM-PKG.zip`;
+  return src("dist/build/**/*") // Pega todos os arquivos dentro de dist
+    .pipe(zipGulp(zipFileName)) // Cria o ZIP com o nome definido
     .pipe(dest("dist/")); // Salva o ZIP na raiz do projeto
 }
 
 // Para usar no package.json
-export const beforeBuild = series(cleanDist);
-export const afterBuild = series(zipScorm);
+export const beforeBuild = series(clean);
+export const afterBuild = series(zip);
 
 // Tarefa padrão para executar a criação do ZIP automaticamente após o build
-export default series(zipScorm);
+export default series(zip);

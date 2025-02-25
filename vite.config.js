@@ -6,6 +6,9 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 export default defineConfig({
   base: "./",
+  build: {
+    outDir: "dist/build", // Output directory
+  },
   plugins: [
     react(),
     ViteImageOptimizer({
@@ -17,7 +20,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@imgs": path.resolve(__dirname, "./public/imgs/"),
+      "@img": path.resolve(__dirname, "./public/imgs/"),
     },
   },
 });
