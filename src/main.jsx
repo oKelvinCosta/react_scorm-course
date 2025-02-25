@@ -4,9 +4,7 @@ import "./styles/global.css";
 import App from "./App.jsx";
 
 // Import SCORM scripts
-import "./assets/scorm/APIWrapper.js";
-import "./assets/scorm/SCOFunctions.js";
-import "./assets/scorm/SCOApp.js";
+import "./lib/scorm-toolkit-esm/index.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

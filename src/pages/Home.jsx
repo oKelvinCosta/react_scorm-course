@@ -31,13 +31,15 @@ import {
 // Assets
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
-import * as SCOApp from "@/assets/scorm/SCOApp";
+
+// SCORM
+import * as SCORM from "../lib/scorm-toolkit-esm/index.js";
 
 export default function Home() {
   const [count, setCount] = useState(0);
 
   const handleConclude = () => {
-    SCOApp.finishTopic();
+    SCORM.SCOApp.finishTopic();
   };
 
   return (
