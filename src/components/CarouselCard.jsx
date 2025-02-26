@@ -46,9 +46,9 @@ export default function CarouselCard({ items }) {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <img
                         src={item.imgSrc}
-                        className="aspect-square rounded-md object-cover"
+                        className="aspect-square md:aspect-video rounded-md object-cover mb-4 sm:mb-0"
                       />
-                      <div className="flex items-center">
+                      <div className="flex items-center  ml-0 sm:ml-4">
                         <div>
                           {item.title()}
                           {item.content()}
