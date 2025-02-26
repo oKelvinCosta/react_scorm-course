@@ -20,13 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import CarouselCard from "@/components/CarouselCard";
 
 // Assets
 import reactLogo from "@/assets/react.svg";
@@ -36,7 +30,92 @@ import viteLogo from "/vite.svg";
 import * as SCORM from "../lib/scorm-toolkit-esm/index.js";
 
 export default function Home() {
-  const [count, setCount] = useState(0);
+  const firstCarouselItems = [
+    {
+      imgSrc: "./imgs/kelvin-costa-boards-temple-1.jpg",
+
+      title: () => {
+        return (
+          <>
+            <h4>My Title</h4>
+          </>
+        );
+      },
+      content: () => {
+        return (
+          <>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+              malandris se pirulitá. A ordem dos tratores não altera o pão
+              duris. Suco de cevadiss deixa as pessoas mais interessantis. Viva
+              Forevis aptent taciti sociosqu ad litora torquent.
+            </p>
+            <p>
+              Suco de cevadiss deixa as pessoas mais interessantis. Viva Forevis
+              aptent taciti sociosqu ad litora torquent.
+            </p>
+          </>
+        );
+      },
+    },
+    {
+      imgSrc: "./imgs/09_20_02_2024_Haki-Estande_Kelvin.png",
+
+      title: () => {
+        return (
+          <>
+            <h4>My Title</h4>
+          </>
+        );
+      },
+      content: () => {
+        return (
+          <>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+              malandris se pirulitá. A ordem dos tratores não altera o pão
+              duris. Suco de cevadiss deixa as pessoas mais interessantis. Viva
+              Forevis aptent taciti sociosqu ad litora torquent.
+            </p>
+          </>
+        );
+      },
+    },
+    {
+      imgSrc: "./imgs/Task.jpg",
+
+      title: () => {
+        return (
+          <>
+            <h4>My Title</h4>
+          </>
+        );
+      },
+      content: () => {
+        return (
+          <>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+              malandris se pirulitá. A ordem dos tratores não altera o pão
+              duris. Suco de cevadiss deixa as pessoas mais interessantis. Viva
+              Forevis aptent taciti sociosqu ad litora torquent.
+            </p>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+              malandris se pirulitá. A ordem dos tratores não altera o pão
+              duris. Suco de cevadiss deixa as pessoas mais interessantis. Viva
+              Forevis aptent taciti sociosqu ad litora torquent.
+            </p>
+          </>
+        );
+      },
+    },
+  ];
+  // Adiciona IDs dinâmicos aos itens
+  const carouselItemsWithIds = firstCarouselItems.map((item, index) => ({
+    ...item,
+    id: `first-${index + 1}`,
+  }));
 
   const handleConclude = () => {
     SCORM.SCOApp.finishTopic();
@@ -134,44 +213,49 @@ export default function Home() {
       <div id="cards" className="py-[80px]">
         <div className="container  text-left">
           <h2>Cards</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
             <Card>
               <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card Description</CardDescription>
+                <img
+                  src="./imgs/Task.jpg"
+                  alt="Vite logo"
+                  className=" aspect-video object-cover"
+                />
               </CardHeader>
               <CardContent>
+                <CardTitle>Card Title</CardTitle>
                 <p>Card Content</p>
               </CardContent>
-              <CardFooter>
-                <p>Card Footer</p>
-              </CardFooter>
+            </Card>
+
+            <Card>
+              <img
+                src="./imgs/Task.jpg"
+                alt="Vite logo"
+                className="mb-5 aspect-video object-cover"
+              />
+              <CardContent>
+                <CardTitle>Card Title</CardTitle>
+                <p>
+                  Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+                  malandris se pirulitá. A ordem dos tratores não altera o pão
+                  duris. Suco de cevadiss deixa as pessoas mais interessantis
+                </p>
+              </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card Description</CardDescription>
+                <img
+                  src="./vite.svg"
+                  alt="Vite logo"
+                  className="rounded-lg mx-auto w-full max-w-[140px] "
+                />
               </CardHeader>
               <CardContent>
-                <p>Card Content</p>
-              </CardContent>
-              <CardFooter>
-                <p>Card Footer</p>
-              </CardFooter>
-            </Card>
-
-            <Card>
-              <CardHeader>
                 <CardTitle>Card Title</CardTitle>
-                <CardDescription>Card Description</CardDescription>
-              </CardHeader>
-              <CardContent>
                 <p>Card Content</p>
               </CardContent>
-              <CardFooter>
-                <p>Card Footer</p>
-              </CardFooter>
             </Card>
           </div>
         </div>
@@ -180,92 +264,33 @@ export default function Home() {
       <div id="carousel" className="py-[80px]">
         <div className="container  text-left">
           <h2>Carousel</h2>
-          <Carousel className="w-full ">
-            <CarouselContent>
-              <CarouselItem>
-                <div>
-                  <Card>
-                    <CardContent className="flex items-center justify-center p-6">
-                      <div className="grid grid-cols-2 gap-2">
-                        <img src="./imgs/kelvin-costa-boards-temple-1.jpg" />
-                        <div>
-                          <span className="text-4xl font-semibold">1</span>
-                          <p>
-                            Mussum Ipsum, cacilds vidis litro abertis.
-                            Casamentiss faiz malandris se pirulitá. A ordem dos
-                            tratores não altera o pão duris. Suco de cevadiss
-                            deixa as pessoas mais interessantis. Viva Forevis
-                            aptent taciti sociosqu ad litora torquent.
-                          </p>
-                          <p>
-                            Suco de cevadiss deixa as pessoas mais
-                            interessantis. Viva Forevis aptent taciti sociosqu
-                            ad litora torquent.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
+          <CarouselCard items={carouselItemsWithIds} />
+        </div>
+      </div>
 
-              <CarouselItem>
-                <div>
-                  <Card>
-                    <CardContent className="flex items-center justify-center p-6">
-                      <div className="grid grid-cols-2 gap-2">
-                        <img src="./imgs/09_20_02_2024_Haki-Estande_Kelvin.png" />
-                        <div>
-                          <span className="text-4xl font-semibold">2</span>
-                          <p>
-                            Mussum Ipsum, cacilds vidis litro abertis.
-                            Casamentiss faiz malandris se pirulitá. A ordem dos
-                            tratores não altera o pão duris. Suco de cevadiss
-                            deixa as pessoas mais interessantis. Viva Forevis
-                            aptent taciti sociosqu ad litora torquent.
-                          </p>
-                          <p>
-                            Suco de cevadiss deixa as pessoas mais
-                            interessantis. Viva Forevis aptent taciti sociosqu
-                            ad litora torquent.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
+      <div id="typography" className="py-[80px]">
+        <div className="container  text-left">
+          <h2>Typography</h2>
 
-              <CarouselItem>
-                <div>
-                  <Card>
-                    <CardContent className="flex items-center justify-center p-6">
-                      <div className="grid grid-cols-2 gap-2">
-                        <img src="./imgs/Task.jpg" />
-                        <div>
-                          <span className="text-4xl font-semibold">3</span>
-                          <p>
-                            Mussum Ipsum, cacilds vidis litro abertis.
-                            Casamentiss faiz malandris se pirulitá. A ordem dos
-                            tratores não altera o pão duris. Suco de cevadiss
-                            deixa as pessoas mais interessantis. Viva Forevis
-                            aptent taciti sociosqu ad litora torquent.
-                          </p>
-                          <p>
-                            Suco de cevadiss deixa as pessoas mais
-                            interessantis. Viva Forevis aptent taciti sociosqu
-                            ad litora torquent.
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+          <h1>Title h1</h1>
+          <h2>Title h2</h2>
+          <h3>Title h3</h3>
+          <h4>Title h4</h4>
+          <h5>Title h5</h5>
+          <h6>Title h6</h6>
+          <p>Paragraph:</p>
+          <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+            malandris se pirulitá. A ordem dos tratores não altera o pão duris.
+            Suco de cevadiss deixa as pessoas mais interessantis. Viva Forevis
+            aptent taciti sociosqu ad litora torquent.
+          </p>
+          <p>
+            Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam
+            vulputate dapibus. Quem num gosta di mé, boa gentis num é. Quem num
+            gosta di mim que vai caçá sua turmis! Detraxit consequat et quo num
+            tendi nada.
+          </p>
         </div>
       </div>
     </>
