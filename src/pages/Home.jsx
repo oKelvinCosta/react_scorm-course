@@ -125,7 +125,7 @@ export default function Home() {
   return (
     <>
       <div id="intro" className="py-[80px]">
-        <div className="container text-center">
+        <div className="container--780 text-center">
           <div className="flex justify-center">
             <a href="https://vite.dev" target="_blank">
               <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -139,7 +139,7 @@ export default function Home() {
             <Button onClick={() => handleConclude()}>Conclude</Button>
           </div>
 
-          <div className="read-the-docs ">
+          <div className="read-the-docs mt-10">
             <p>
               Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
               malandris se pirulitá. A ordem dos tratores não altera o pão
@@ -157,7 +157,7 @@ export default function Home() {
       </div>
 
       <div id="typography" className="py-[80px]">
-        <div className="container  text-left">
+        <div className="container--780  text-left">
           <h2>Typography</h2>
 
           <h1>Title h1</h1>
@@ -212,7 +212,7 @@ export default function Home() {
       </div>
 
       <div id="cards" className="py-[80px]">
-        <div className="container  text-left">
+        <div className="container--780  text-left">
           <h2>Cards</h2>
           <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
             <Card>
@@ -263,14 +263,14 @@ export default function Home() {
       </div>
 
       <div id="carousel" className="py-[80px]">
-        <div className="container  text-left">
+        <div className="container--780  text-left">
           <h2>Carousel</h2>
           <CarouselCard items={carouselItemsWithIds} />
         </div>
       </div>
 
       <div id="box-attention" className="py-[80px]">
-        <div className="container  text-left">
+        <div className="container--780  text-left">
           <h2>Box Attention</h2>
 
           <BoxAttention

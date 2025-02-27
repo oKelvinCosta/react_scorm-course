@@ -62,15 +62,6 @@
 
 @layer base {
   * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer base {
-  * {
     @apply border-border outline-ring/50;
   }
   body {
@@ -80,61 +71,20 @@
 
 /* END TAILWIND AND SHADCN */
 
-/* Typography */
-
-:root {
-  --title-font-family: "Teko", "Roboto", "Helvetica Neue", sans-serif;
-  --title-font-weight: 600;
-  --text-font-family: "Roboto", "Helvetica Neue", sans-serif;
+/* Responsiveness ---------------------------*/
+@layer base {
+  html {
+    @apply text-sm sm:text-base;
+  }
+  .container--750 {
+    @apply max-w-[580px] w-full mx-auto px-4;
+  }
+  .container--780 {
+    @apply max-w-[780px] w-full mx-auto px-4;
+  }
+  .container--1280 {
+    @apply max-w-[1280px] w-full mx-auto px-4;
+  }
 }
 
-/*
-Default guide
-
-display text-7xl
-h1 text-5xl
-h2 text-4xl
-h3 text-3xl
-h4 text-2xl
-h5 text-xl
-h6 text-lg
-p / default text-lg
- */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--title-font-family);
-  font-weight: var(--title-font-weight);
-  @apply mb-2;
-}
-h1 {
-  @apply text-5xl;
-}
-h2 {
-  @apply text-4xl;
-}
-h3 {
-  @apply text-3xl;
-}
-h4 {
-  @apply text-2xl;
-}
-h5 {
-  @apply text-xl;
-}
-h6 {
-  @apply text-lg;
-}
-p {
-  margin: 0.5rem auto;
-  font-family: var(--text-font-family);
-  line-height: 140%;
-  @apply text-lg;
-}
-
-.container {
-  @apply mx-auto px-6;
-}
+@import "./typography.css";
