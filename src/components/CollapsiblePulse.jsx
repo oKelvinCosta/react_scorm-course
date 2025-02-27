@@ -21,20 +21,18 @@ export default function CollapsiblePulse({ children, className }) {
   return (
     <>
       <Collapsible open={isOpen} onOpenChange={setIsOpen} className={className}>
-        <CollapsibleTrigger className="w-full">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="rounded-md border flex items-center justify-between w-full relative animate-pulseShadow"
-          >
-            {headerContent}
-            <ChevronDown
-              className={`h-4 w-4 ml-2 transition-transform duration-200 ${
-                isOpen ? "rotate-180" : ""
-              }`}
-            />
-            <span className="sr-only">Toggle</span>
-          </Button>
+        <CollapsibleTrigger
+          variant="ghost"
+          size="sm"
+          className="bg-white hover:bg-gray-100 transition-colors w-full p-2 rounded-md border flex items-center justify-between  relative animate-pulseShadow"
+        >
+          {headerContent}
+          <ChevronDown
+            className={`h-4 w-4 ml-2 transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+          <span className="sr-only">Toggle</span>
         </CollapsibleTrigger>
 
         <CollapsibleContent
@@ -51,11 +49,7 @@ export default function CollapsiblePulse({ children, className }) {
 
 // Declarando os componentes auxiliares dentro do componente principal
 CollapsiblePulse.Header = function CollapsiblePulseHeader({ children }) {
-  return (
-    <>
-      <h6>{children}</h6>
-    </>
-  );
+  return <>{children}</>;
 };
 
 CollapsiblePulse.Content = function CollapsiblePulseContent({ children }) {

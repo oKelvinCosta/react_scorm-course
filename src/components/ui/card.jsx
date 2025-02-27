@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import "./card.css";
 
 // Card Header modificado para abraçar imagem
 
@@ -31,7 +32,10 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = React.forwardRef(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    className={cn(
+      "font-semibold text-md leading-none tracking-tight",
+      className
+    )}
     {...props}
   />
 ));
@@ -47,7 +51,7 @@ const CardDescription = React.forwardRef(({ className, ...props }, ref) => (
 CardDescription.displayName = "CardDescription";
 
 const CardContent = React.forwardRef(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+  <div ref={ref} className={cn("p-6 pt-0 CardContent", className)} {...props} />
 ));
 CardContent.displayName = "CardContent";
 

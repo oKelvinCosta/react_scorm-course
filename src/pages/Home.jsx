@@ -22,7 +22,6 @@ import {
 } from "@/components/ui/card";
 import CarouselCard from "@/components/CarouselCard";
 import BoxAttention from "@/components/BoxAttention";
-
 import CollapsiblePulse from "@/components/CollapsiblePulse";
 
 // Assets
@@ -31,6 +30,10 @@ import viteLogo from "/vite.svg";
 
 // SCORM
 import * as SCORM from "../lib/scorm-toolkit-esm/index.js";
+import ProgressBarCourse from "@/components/ProgressBarCourse";
+import Divisor from "@/components/Divisor";
+import ImgCircle from "@/components/ImgCircle";
+import Img from "@/components/Img";
 
 export default function Home() {
   const firstCarouselItems = [
@@ -126,7 +129,7 @@ export default function Home() {
 
   return (
     <>
-      <div id="intro" className="py-[80px]">
+      <div id="intro" className="py-[80px] bg-slate-100">
         <div className="container--780 text-center">
           <div className="flex justify-center">
             <a href="https://vite.dev" target="_blank">
@@ -137,11 +140,13 @@ export default function Home() {
             </a>
           </div>
           <h1>Vite + React</h1>
-          <div>
-            <Button onClick={() => handleConclude()}>Conclude</Button>
+          <div className="mb-10 mt-6">
+            <Button variant="secondary" onClick={() => handleConclude()}>
+              SCORM Conclude
+            </Button>
           </div>
 
-          <div className="read-the-docs mt-10">
+          <div className="read-the-docs">
             <p>
               Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
               malandris se pirulitá. A ordem dos tratores não altera o pão
@@ -158,7 +163,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="typography" className="py-[80px]">
+      <div
+        id="typography"
+        className="py-[80px] bg-gradient-to-r from-sky-500 to-indigo-500"
+      >
         <div className="container--780  text-left">
           <h2>Typography</h2>
 
@@ -184,8 +192,11 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="accordion" className="py-[80px]">
-        <div className="container">
+      <div
+        id="accordion"
+        className="py-[80px] bg-gradient-to-r from-violet-500 to-fuchsia-500"
+      >
+        <div className="container--780">
           <h2>Accordion</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -240,7 +251,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="cards" className="py-[80px]">
+      <div id="cards" className="py-[80px] bg-slate-100">
         <div className="container--780  text-left">
           <h2>Cards</h2>
           <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
@@ -291,7 +302,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="carousel" className="py-[80px]">
+      <div id="carousel" className="py-[80px] bg-indigo-500">
         <div className="container--780  text-left">
           <h2>Carousel</h2>
           <CarouselCard items={carouselItemsWithIds} />
@@ -355,6 +366,43 @@ export default function Home() {
                 Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
                 malandris se pirulitá. A ordem dos tratores não altera o pão
                 duris. Suco de cevadiss deixa as pessoas mais interessantis
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="grid" className="py-[80px] bg-indigo-500">
+        <div className="container--780">
+          <div className="grid md:grid-cols-12 gap-6 mt-10 items-center">
+            <div className="md:col-span-3">
+              <ImgCircle
+                src="./imgs/kelvin-costa-boards-temple-1.jpg"
+                className="max-w-[250px] md:max-w-[150px]"
+              />
+            </div>
+            <div className="md:col-span-9">
+              <h4>title</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed
+                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrum exercitationem ullam corporis
+                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6 mt-10 items-center">
+            <div>
+              <Img src="./imgs/core/placeholder.png" />
+            </div>
+            <div>
+              <h4>title</h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed
+                eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrum exercitationem ullam corporis
+                suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
               </p>
             </div>
           </div>

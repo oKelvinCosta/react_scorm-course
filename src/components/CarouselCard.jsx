@@ -15,6 +15,17 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+/**
+ * Componente que renderiza um card com um carrossel de imagens.
+ *
+ * @prop {Object[]} items - Array com as informações dos slides do carrossel.
+ * @prop {string} items[].imgSrc - URL da imagem do slide.
+ * @prop {ReactNode} items[].title - Titulo do slide.
+ * @prop {ReactNode} items[].content - Conte do do slide.
+ *
+ * @returns Um carrossel com os slides informados.
+ */
+
 export default function CarouselCard({ items }) {
   // Informação do Slide atual
   const [api, setApi] = React.useState(null);
