@@ -23,6 +23,8 @@ import {
 import CarouselCard from "@/components/CarouselCard";
 import BoxAttention from "@/components/BoxAttention";
 
+import CollapsiblePulse from "@/components/CollapsiblePulse";
+
 // Assets
 import reactLogo from "@/assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -186,28 +188,55 @@ export default function Home() {
         <div className="container">
           <h2>Accordion</h2>
 
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It adheres to the WAI-ARIA design pattern.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It's animated by default, but you can disable it if you
-                prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Accordion type="single" collapsible>
+              {Array.from({ length: 5 }).map((_, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index + 1}`}
+                  className=" "
+                >
+                  <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                  <AccordionContent>
+                    Yes. It adheres to the WAI-ARIA design pattern.
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+
+            <div>
+              <CollapsiblePulse>
+                <CollapsiblePulse.Header>
+                  <h6>@peduarte starred 3 repositories</h6>
+                </CollapsiblePulse.Header>
+                <CollapsiblePulse.Content>
+                  <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
+                    @radix-ui/colors
+                  </div>
+                  <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
+                    @stitches/react
+                  </div>
+                  <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
+                    @stitches/react
+                  </div>
+                </CollapsiblePulse.Content>
+              </CollapsiblePulse>
+
+              <CollapsiblePulse className="mt-6">
+                <CollapsiblePulse.Header>
+                  <h6>@peduarte starred 3 repositories</h6>
+                </CollapsiblePulse.Header>
+                <CollapsiblePulse.Content>
+                  <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
+                    @radix-ui/colors
+                  </div>
+                  <div className="rounded-md border px-4 py-2 font-mono text-sm shadow-sm">
+                    @stitches/react
+                  </div>
+                </CollapsiblePulse.Content>
+              </CollapsiblePulse>
+            </div>
+          </div>
         </div>
       </div>
 

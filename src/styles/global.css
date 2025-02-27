@@ -114,7 +114,6 @@ h5,
 h6 {
   font-family: var(--title-font-family);
   font-weight: var(--title-font-weight);
-  @apply mb-2;
 }
 h1 {
   @apply text-5xl;

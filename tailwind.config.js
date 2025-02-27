@@ -67,21 +67,36 @@ export default {
             height: "0",
           },
           to: {
-            height: "var(--radix-accordion-content-height)",
+            height: "var(--radix-collapsible-content-height)",
           },
         },
         "accordion-up": {
           from: {
-            height: "var(--radix-accordion-content-height)",
+            height: "var(--radix-collapsible-content-height)",
           },
           to: {
             height: "0",
+          },
+        },
+        pulseShadow: {
+          "0%": {
+            boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
+          },
+          "50%": {
+            boxShadow: "0 0 0 6px rgba(0, 0, 0, 0)",
+          },
+          "80%": {
+            boxShadow: "0 0 0 0 rgba(0, 0, 0, 0)",
+          },
+          "100%": {
+            boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
           },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        pulseShadow: "pulseShadow 1.5s infinite",
       },
     },
   },
