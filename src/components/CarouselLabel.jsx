@@ -15,6 +15,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { cn } from "@/lib/utils";
+
 /**
  * Componente que renderiza um card com um carrossel de imagens.
  *
@@ -26,13 +28,11 @@ import {
  * @returns Um carrossel com os slides informados.
  */
 
-export default function CarouselCard({ items }) {
+export default function CarouselLabel({ items }) {
   // Informação do Slide atual
   const [api, setApi] = React.useState(null);
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
-
-  console.log(current);
 
   React.useEffect(() => {
     if (!api) {
@@ -54,20 +54,14 @@ export default function CarouselCard({ items }) {
           {items.map((item, key) => {
             return (
               <CarouselItem key={key}>
-                <Card>
-                  <CardContent className="flex items-center justify-center p-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <img
-                        src={item.imgSrc}
-                        className="aspect-square md:aspect-video rounded-md object-cover mb-4 sm:mb-0"
-                      />
-                      <div className="flex items-center  ml-0 sm:ml-4">
-                        <div>
-                          {item.title()}
-                          {item.content()}
-                        </div>
-                      </div>
-                    </div>
+                <Card className={`relative h-[400px]`}>
+                  <img
+                    src={item.imgSrc}
+                    className="absolute h-full w-full rounded-md object-cover object-position-center  z-[1] brightness-10"
+                  />
+                  <CardContent className="opacity-85 p-3 bg-gray-50 absolute bottom-5 mx-[10%] rounded-md z-[2]">
+                    {item.title()}
+                    {item.content()}
                   </CardContent>
                 </Card>
               </CarouselItem>

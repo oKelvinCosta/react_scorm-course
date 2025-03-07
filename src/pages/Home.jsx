@@ -35,12 +35,9 @@ import ImgCircle from "@/components/ImgCircle";
 import Img from "@/components/Img";
 
 import { useNavigate } from "react-router-dom";
+import CarouselLabel from "@/components/CarouselLabel";
 
 export default function Home() {
-
-
-  
-
   const firstCarouselItems = [
     {
       imgSrc: "./imgs/kelvin-costa-boards-temple-1.jpg",
@@ -134,7 +131,6 @@ export default function Home() {
 
   return (
     <>
-      
       <div id="intro" className="py-[80px] bg-slate-100">
         <div className="container--780 text-center">
           <div className="flex justify-center">
@@ -308,10 +304,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="carousel" className="py-[80px] bg-indigo-500">
+      <div id="carousel" className="py-[80px] bg-gray-50">
         <div className="container--780  text-left">
           <h2>Carousel</h2>
+          <h3>Carousel Card</h3>
           <CarouselCard items={carouselItemsWithIds} />
+
+          <h3>Carousel Label</h3>
+          <CarouselLabel items={carouselItemsWithIds} />
         </div>
       </div>
 
