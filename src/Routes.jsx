@@ -12,23 +12,8 @@ import Fase1 from "./pages/Fase1";
 import Fase2 from "./pages/Fase2";
 import Loading from "./components/Loading";
 
-function AppRoutes() {
-  const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const savedPage = localStorage.getItem("currentPage");
-    if (savedPage) {
-      navigate(savedPage);
-    }
-
-    setIsLoading(false);
-  }, []);
-
-  if (isLoading) {
-    return <Loading />;
-  }
-
+// Route configuration component
+function RouteConfig() {
   const myRoutes = [
     { path: "/", element: <Home /> },
     { path: "/about", element: <About /> },
@@ -38,7 +23,6 @@ function AppRoutes() {
 
   return (
     <>
-      <Navigation />
       <RoutesViews>
         {myRoutes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
@@ -48,6 +32,37 @@ function AppRoutes() {
   );
 }
 
+// Main AppRoutes component
+function AppRoutes() {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
+  // useEffect hook to handle navigation based on saved page in localStorage
+  useEffect(() => {
+    const savedPage = localStorage.getItem("currentPage");
+    if (savedPage) {
+      navigate(savedPage);
+    }
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+    // setIsLoading(false);
+  }, [navigate]);
+
+  // Show loading component while loading
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  return (
+    <>
+      <Navigation />
+      <RouteConfig /> {/* Use the RouteConfig component */}
+    </>
+  );
+}
+
+// Main Routes component with HashRouter
 export default function Routes() {
   return (
     <HashRouter>

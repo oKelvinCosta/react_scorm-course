@@ -3,11 +3,11 @@ import React from "react";
 export default function Loading() {
   return (
     <>
-      <div>
-        <div role="status" className="fixed top-[45%] left-[50%]">
+      <div className="fixed h-svh w-full flex justify-center items-center bg-gray-100">
+        <div role="status" className="absolute top-[45%] left-[50%] scale-150">
           <svg
             aria-hidden="true"
-            className="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-indigo-600"
+            className="inline w-8 h-8 text-gray-300 animate-spin dark:text-gray-600 fill-indigo-600 "
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
