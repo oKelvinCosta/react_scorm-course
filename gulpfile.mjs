@@ -4,33 +4,33 @@ import path from "path";
 
 import { deleteAsync } from "del";
 
-// Função para deletar tudo dentro da pasta "dist"
+// Function to delete everything inside the "dist" folder
 export function clean() {
   return deleteAsync(["dist/**"]);
 }
 
-// Função para obter a data atual no formato dd-mm-yyyy
+// Function to get the current date in dd-mm-yyyy format
 function getCurrentDate() {
   const now = new Date();
   const day = String(now.getDate()).padStart(2, "0");
-  const month = String(now.getMonth() + 1).padStart(2, "0"); // Janeiro é 0!
+  const month = String(now.getMonth() + 1).padStart(2, "0"); // January is 0!
   const year = now.getFullYear();
   return `${day}-${month}-${year}`;
 }
 
-// Tarefa para criar o ZIP da pasta dist
+// Task to create the ZIP of the dist folder
 export function zip() {
   const dirname = path.basename(path.resolve());
-  // Nome do arquivo ZIP gerado
+  // Name of the generated ZIP file
   const zipFileName = `${dirname}_${getCurrentDate()}_SCORM-PKG.zip`;
-  return src("dist/build/**/*") // Pega todos os arquivos dentro de dist
-    .pipe(zipGulp(zipFileName)) // Cria o ZIP com o nome definido
-    .pipe(dest("dist/")); // Salva o ZIP na raiz do projeto
+  return src("dist/build/**/*") // Get all files inside dist
+    .pipe(zipGulp(zipFileName)) // Create the ZIP with the defined name
+    .pipe(dest("dist/")); // Save the ZIP in the project root
 }
 
-// Para usar no package.json
+// To use in package.json
 export const beforeBuild = series(clean);
 export const afterBuild = series(zip);
 
-// Tarefa padrão para executar a criação do ZIP automaticamente após o build
+// Default task to automatically create the ZIP after the build
 export default series(zip);

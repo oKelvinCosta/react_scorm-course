@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 
 // Estilos
 import "./Home.css";
@@ -35,7 +34,13 @@ import Divisor from "@/components/Divisor";
 import ImgCircle from "@/components/ImgCircle";
 import Img from "@/components/Img";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Home() {
+
+
+  
+
   const firstCarouselItems = [
     {
       imgSrc: "./imgs/kelvin-costa-boards-temple-1.jpg",
@@ -129,6 +134,7 @@ export default function Home() {
 
   return (
     <>
+      
       <div id="intro" className="py-[80px] bg-slate-100">
         <div className="container--780 text-center">
           <div className="flex justify-center">

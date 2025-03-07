@@ -1,31 +1,59 @@
-import { HashRouter, Route, Routes as RoutesViews } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  HashRouter,
+  Route,
+  Routes as RoutesViews,
+  useNavigate,
+} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import ProgressBarCourse from "./components/ProgressBarCourse";
+import Fase1 from "./pages/Fase1";
+import Fase2 from "./pages/Fase2";
+import Loading from "./components/Loading";
 
-export default function Routes() {
+function AppRoutes() {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const savedPage = localStorage.getItem("currentPage");
+    if (savedPage) {
+      navigate(savedPage);
+    }
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   const myRoutes = [
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
+    { path: "/", element: <Home /> },
+    { path: "/about", element: <About /> },
+    { path: "/fase1", element: <Fase1 /> },
+    { path: "/fase2", element: <Fase2 /> },
   ];
+
   return (
     <>
-      <HashRouter>
-        <ProgressBarCourse />
-        <Navigation />
-        <RoutesViews>
-          {myRoutes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </RoutesViews>
-      </HashRouter>
+      <Navigation />
+      <RoutesViews>
+        {myRoutes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </RoutesViews>
     </>
+  );
+}
+
+export default function Routes() {
+  return (
+    <HashRouter>
+      <AppRoutes />
+    </HashRouter>
   );
 }

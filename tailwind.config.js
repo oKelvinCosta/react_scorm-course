@@ -3,7 +3,7 @@ export default {
   darkMode: ["class"],
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // Certifique-se de incluir todos os tipos de arquivos que você está usando
+    "./src/**/*.{js,jsx,ts,tsx}", // Make sure to include all file types you are using.
   ],
   theme: {
     container: {
