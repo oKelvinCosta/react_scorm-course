@@ -22,6 +22,8 @@ import {
 import CarouselCard from "@/components/CarouselCard";
 import BoxAttention from "@/components/BoxAttention";
 import CollapsiblePulse from "@/components/CollapsiblePulse";
+import CarouselLabel from "@/components/CarouselLabel";
+import ImageMapPopover from "@/components/ImageMapPopover";
 
 // Assets
 import reactLogo from "@/assets/react.svg";
@@ -35,7 +37,6 @@ import ImgCircle from "@/components/ImgCircle";
 import Img from "@/components/Img";
 
 import { useNavigate } from "react-router-dom";
-import CarouselLabel from "@/components/CarouselLabel";
 
 export default function Home() {
   const firstCarouselItems = [
@@ -124,6 +125,39 @@ export default function Home() {
     ...item,
     id: `first-${index + 1}`,
   }));
+
+  const popovers = [
+    {
+      position: "top-[40%] left-[30%]",
+      content: () => (
+        <>
+          <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Casamentiss faiz
+            malandris se pirulitá. A ordem dos tratores não altera o pão duris.
+            Suco de cevadiss deixa as pessoas mais interessantis.
+          </p>
+        </>
+      ),
+    },
+    {
+      position: "top-[30%] left-[50%]",
+      content: () => (
+        <>
+          <h4>Title</h4>
+          <p>Mussum Ipsum, cacilds vidis litro abertis.</p>
+        </>
+      ),
+    },
+    {
+      position: "top-[80%] left-[50%]",
+      content: () => (
+        <>
+          <h4>Title</h4>
+          <p>Mussum Ipsum, cacilds vidis litro abertis.</p>
+        </>
+      ),
+    },
+  ];
 
   const handleConclude = () => {
     SCORM.SCOApp.finishTopic();
@@ -412,6 +446,17 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div id="img-map" className="py-[80px] bg-gray-50">
+        <div className="container--780  text-left">
+          <h2>Image Map</h2>
+          <h3>Popover</h3>
+          <ImageMapPopover
+            src="./imgs/kelvin-costa-boards-temple-1.jpg"
+            popovers={popovers}
+          />
         </div>
       </div>
     </>

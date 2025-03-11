@@ -43,10 +43,11 @@ function AppRoutes() {
     if (savedPage) {
       navigate(savedPage);
     }
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-    // setIsLoading(false);
+    // To Debug
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    // }, 5000);
+    setIsLoading(false);
   }, [navigate]);
 
   // Show loading component while loading
