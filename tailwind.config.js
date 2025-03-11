@@ -92,11 +92,21 @@ export default {
             boxShadow: "0 0 0 0 rgba(0, 0, 0, 0.7)",
           },
         },
+        pulseBlink: {
+          "0%": { filter: "brightness(1)" },
+          "100%": {
+            filter: "brightness(1)",
+          },
+          "50%": {
+            filter: "brightness(1.35)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         pulseShadow: "pulseShadow 1.5s infinite",
+        pulseBlink: "pulseBlink 1.5s infinite",
       },
     },
   },
