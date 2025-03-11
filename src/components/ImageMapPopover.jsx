@@ -6,6 +6,17 @@ import {
 } from "@/components/ui/popover";
 import "./ImageMapPopover.css";
 
+/**
+ * Componente que renderiza uma imagem com pontos de popup.
+ *
+ * @prop {string} imgSrc - URL da imagem.
+ * @prop {string} imgClassName - Classes CSS para a imagem.
+ * @prop {Object[]} popovers - Array com informa es sobre os popups.
+ * @prop {string} popovers[].content - Conte do do popup.
+ * @prop {string} popovers[].position - Posi o do popup na imagem.
+ *
+ * @returns Componente com a imagem e seus popups.
+ */
 export default function ImageMapPopover({
   imgSrc = "./imgs/core/placeholder.png",
   imgClassName,
