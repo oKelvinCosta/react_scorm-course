@@ -14,6 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Img from "./Img";
 
 /**
  * Componente que renderiza um card com um carrossel de imagens.
@@ -57,9 +58,9 @@ export default function CarouselCard({ items }) {
                 <Card>
                   <CardContent className="flex items-center justify-center p-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      <img
-                        src={item.imgSrc}
-                        className="aspect-square md:aspect-video rounded-md object-cover mb-4 sm:mb-0"
+                      <Img
+                        src={`${item.imgSrc}`}
+                        className={`aspect-square md:aspect-video rounded-md mb-4 sm:mb-0`}
                       />
                       <div className="flex items-center  ml-0 sm:ml-4">
                         <div>

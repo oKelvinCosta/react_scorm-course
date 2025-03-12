@@ -15,7 +15,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import { cn } from "@/lib/utils";
+import Img from "./Img";
 
 /**
  * Componente que renderiza um card com um carrossel de imagens.
@@ -55,9 +55,9 @@ export default function CarouselLabel({ items }) {
             return (
               <CarouselItem key={key}>
                 <Card className={`relative h-[400px]`}>
-                  <img
-                    src={item.imgSrc}
-                    className="absolute h-full w-full rounded-md object-cover object-position-center  z-[1] brightness-10"
+                  <Img
+                    src={`${item.imgSrc}`}
+                    className={`absolute h-full w-full rounded-md   z-[1] brightness-10`}
                   />
                   <CardContent className="opacity-85 p-3 bg-gray-50 absolute bottom-5 mx-[10%] rounded-md z-[2]">
                     {item.title()}

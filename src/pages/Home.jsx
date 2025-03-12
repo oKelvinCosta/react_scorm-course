@@ -25,6 +25,10 @@ import CollapsiblePulse from "@/components/CollapsiblePulse";
 import CarouselLabel from "@/components/CarouselLabel";
 import ImageMapPopover from "@/components/ImageMapPopover";
 import ImageMapImgPopover from "@/components/ImageMapImgPopover";
+import ProgressBarCourse from "@/components/ProgressBarCourse";
+import Divisor from "@/components/Divisor";
+import Img from "@/components/Img";
+import VideoBox from "@/components/VideoBox";
 
 // Assets
 import reactLogo from "@/assets/react.svg";
@@ -32,10 +36,6 @@ import viteLogo from "/vite.svg";
 
 // SCORM
 import * as SCORM from "../lib/scorm-toolkit-esm/index.js";
-import ProgressBarCourse from "@/components/ProgressBarCourse";
-import Divisor from "@/components/Divisor";
-import ImgCircle from "@/components/ImgCircle";
-import Img from "@/components/Img";
 
 import { useNavigate } from "react-router-dom";
 
@@ -129,7 +129,7 @@ export default function Home() {
 
   const popovers = [
     {
-      position: "top-[40%] left-[30%]",
+      position: "top-[45%] left-[30%]",
       content: () => (
         <>
           <p>
@@ -194,6 +194,7 @@ export default function Home() {
 
   return (
     <>
+      <ProgressBarCourse />
       <div id="intro" className="py-[80px] bg-slate-100">
         <div className="container--780 text-center">
           <div className="flex justify-center">
@@ -322,10 +323,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
             <Card>
               <CardHeader>
-                <img
-                  src="./imgs/Task.jpg"
+                <Img
+                  src={`./imgs/Task.jpg`}
+                  className={`aspect-video`}
                   alt="Vite logo"
-                  className=" aspect-video object-cover"
                 />
               </CardHeader>
               <CardContent>
@@ -335,10 +336,10 @@ export default function Home() {
             </Card>
 
             <Card>
-              <img
-                src="./imgs/Task.jpg"
+              <Img
+                src={`./imgs/Task.jpg`}
+                className={`mb-5 aspect-video`}
                 alt="Vite logo"
-                className="mb-5 aspect-video object-cover"
               />
               <CardContent>
                 <CardTitle>Card Title</CardTitle>
@@ -352,10 +353,10 @@ export default function Home() {
 
             <Card>
               <CardHeader>
-                <img
-                  src="./vite.svg"
+                <Img
+                  src={`./vite.svg`}
+                  className={`rounded-lg mx-auto w-full max-w-[140px]`}
                   alt="Vite logo"
-                  className="rounded-lg mx-auto w-full max-w-[140px] "
                 />
               </CardHeader>
               <CardContent>
@@ -408,10 +409,9 @@ export default function Home() {
           </BoxAttention>
 
           <div className="flex items-start sm:items-center flex-col sm:flex-row  rounded-lg bg-indigo-600 p-6 my-10">
-            <img
-              src="./imgs/Task.jpg"
-              alt=""
-              className="w-full max-w-[150px] sm:mr-6  object-cover rounded-md"
+            <Img
+              src={`./imgs/Task.jpg`}
+              className={`max-w-[150px] sm:mr-6  object-cover rounded-md`}
             />
             <div className=" text-white">
               <h3>Box Attention</h3>
@@ -445,9 +445,10 @@ export default function Home() {
         <div className="container--780">
           <div className="grid md:grid-cols-12 gap-6 mt-10 items-center">
             <div className="md:col-span-3">
-              <ImgCircle
-                src="./imgs/kelvin-costa-boards-temple-1.jpg"
-                className="max-w-[250px] md:max-w-[150px]"
+              <Img
+                src={`./imgs/kelvin-costa-boards-temple-1.jpg`}
+                isCircle={true}
+                className={"max-w-[250px] md:max-w-[150px]"}
               />
             </div>
             <div className="md:col-span-9">
@@ -489,6 +490,13 @@ export default function Home() {
             imgSrc="./imgs/Quadro.webp"
             popovers={popoversImg}
           />
+        </div>
+      </div>
+
+      <div id="video-box" className="py-[80px] bg-gray-50">
+        <div className="container--780  text-left">
+          <h2>Video Box</h2>
+          <VideoBox />
         </div>
       </div>
     </>

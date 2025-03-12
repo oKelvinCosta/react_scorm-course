@@ -4,7 +4,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import "./ImageMapPopover.css";
+import "./ImageMap.css";
+import Img from "./Img";
 
 /**
  * Component that renders an image with popover points.
@@ -28,12 +29,7 @@ export default function ImageMapImgPopover({
   return (
     <>
       <div className="relative image-map-popover">
-        <img
-          src={imgSrc}
-          className={`w-full object-cover object-center ${imgClassName}`}
-          alt="Imagem"
-          loading="lazy"
-        />
+        <Img src={imgSrc} className={`${imgClassName}`} />
 
         {popovers.map((item, key) => (
           <Popover key={key}>
@@ -41,12 +37,7 @@ export default function ImageMapImgPopover({
               className={`w-[5%] absolute animate-pulseBlink hover:scale-110 transition-all ${item.width} ${item.position}`}
               data-aos="fade-up"
             >
-              <img
-                src={item.imgSrc}
-                className={`w-full object-cover object-center `}
-                alt="Imagem"
-                loading="lazy"
-              />
+              <Img src={`${item.imgSrc}`} />
             </PopoverTrigger>
             <PopoverContent className="popoverContent">
               {typeof item.content === "function"
