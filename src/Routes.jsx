@@ -6,19 +6,19 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Navigation from "./components/Navigation";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Fase1 from "./pages/Fase1";
-import Fase2 from "./pages/Fase2";
+import Exemplo1 from "./pages/Exemplo1";
+import Exemplo2 from "./pages/Exemplo2";
+import Exemplo3 from "./pages/Exemplo3";
+import Exemplo4 from "./pages/Exemplo4";
 import Loading from "./components/Loading";
 
 // Route configuration component
 function RouteConfig() {
   const myRoutes = [
-    { path: "/", element: <Home /> },
-    { path: "/about", element: <About /> },
-    { path: "/fase1", element: <Fase1 /> },
-    { path: "/fase2", element: <Fase2 /> },
+    { path: "/", element: <Exemplo1 /> },
+    { path: "/exemplo2", element: <Exemplo2 /> },
+    { path: "/exemplo3", element: <Exemplo3 /> },
+    { path: "/exemplo4", element: <Exemplo4 /> },
   ];
 
   return (

@@ -23,7 +23,7 @@ export function zip() {
   const dirname = path.basename(path.resolve());
   // Name of the generated ZIP file
   const zipFileName = `${dirname}_${getCurrentDate()}_SCORM-PKG.zip`;
-  return src("dist/build/**/*") // Get all files inside dist
+  return src("dist/build/**/*", { encoding: false }) // Get all files inside dist, encoding: false to not corrupt the images
     .pipe(zipGulp(zipFileName)) // Create the ZIP with the defined name
     .pipe(dest("dist/")); // Save the ZIP in the project root
 }

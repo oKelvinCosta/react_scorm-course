@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // Estilos
-import "./Home.css";
+import "./Exemplo1.css";
 
 // Componentes
 import { Button } from "@/components/ui/button";
@@ -37,9 +37,15 @@ import viteLogo from "/vite.svg";
 // SCORM
 import * as SCORM from "../lib/scorm-toolkit-esm/index.js";
 
-import { useNavigate } from "react-router-dom";
-
 export default function Home() {
+  const [lessonStatus, setlessonStatus] = useState(null);
+
+  useEffect(() => {}, []);
+
+  const handleConclude = () => {
+    SCORM.SCOApp.finishTopic();
+  };
+
   const firstCarouselItems = [
     {
       imgSrc: "./imgs/kelvin-costa-boards-temple-1.jpg",
@@ -188,10 +194,6 @@ export default function Home() {
     },
   ];
 
-  const handleConclude = () => {
-    SCORM.SCOApp.finishTopic();
-  };
-
   return (
     <>
       <ProgressBarCourse />
@@ -207,7 +209,15 @@ export default function Home() {
           </div>
           <h1>Vite + React</h1>
           <div className="mb-10 mt-6">
-            <Button variant="secondary" onClick={() => handleConclude()}>
+            <Button
+              disabled={
+                lessonStatus == SCORM.SCOApp.LESSON_STATUS.completed
+                  ? true
+                  : false
+              }
+              variant="secondary"
+              onClick={() => handleConclude()}
+            >
               SCORM Conclude
             </Button>
           </div>
@@ -229,10 +239,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div
-        id="typography"
-        className="py-[80px] bg-gradient-to-r from-sky-500 to-indigo-500"
-      >
+      <div id="typography" className="py-[80px]  bg-sky-500">
         <div className="container--780  text-left">
           <h2>Typography</h2>
 

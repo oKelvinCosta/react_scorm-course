@@ -73,10 +73,9 @@ export default function CarouselLabel({ items }) {
         <ul className="py-2 text-center text-sm flex space-x-2 justify-center">
           {Array.from({ length: count }).map((_, key) => {
             return (
-              <li>
+              <li key={key}>
                 <button
                   onClick={() => api.scrollTo(key)}
-                  key={key}
                   className={`rounded-full w-3 h-3 ${
                     key + 1 == current
                       ? "bg-primary outline-0"

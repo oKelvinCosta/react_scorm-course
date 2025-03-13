@@ -26,8 +26,8 @@ export default function Navigation() {
           <li>
             <Button
               onClick={() => {
-                handleSaveState("/about");
-                Navigate("/about");
+                handleSaveState("/exemplo2");
+                Navigate("/exemplo2");
               }}
             >
               About
@@ -36,8 +36,8 @@ export default function Navigation() {
           <li>
             <Button
               onClick={() => {
-                handleSaveState("/fase1");
-                Navigate("/fase1");
+                handleSaveState("/exemplo3");
+                Navigate("/exemplo3");
               }}
             >
               Fase 1
@@ -46,8 +46,8 @@ export default function Navigation() {
           <li>
             <Button
               onClick={() => {
-                handleSaveState("/fase2");
-                Navigate("/fase2");
+                handleSaveState("/exemplo4");
+                Navigate("/exemplo4");
               }}
             >
               Fase 2
